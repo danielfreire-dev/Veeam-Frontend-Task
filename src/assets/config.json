@@ -1,0 +1,34 @@
+{
+	"items": [
+		{
+			"label": "numeric",
+			"type": "number",
+			"name": "name"
+		},
+		{
+			"label": "string",
+			"type": "text",
+			"name": "name"
+		},
+		{
+			"label": "multi-line",
+			"type": "text-area",
+			"name": "name"
+		},
+		{
+			"label": "boolean",
+			"type": "checkbox",
+			"name": "name"
+		},
+		{
+			"label": "date",
+			"type": "date",
+			"name": "name"
+		},
+		{
+			"label": "enum",
+			"type": "radio",
+			"name": "name"
+		}
+	]
+}
