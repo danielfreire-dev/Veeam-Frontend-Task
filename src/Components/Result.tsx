@@ -1,79 +1,62 @@
-import { JSX } from "react";
+import { JSX, ReactNode } from "react";
 import { ItemsArray } from "./Config.tsx";
-
+import { nanoid } from "nanoid";
 interface ResultProps {
 	config: ItemsArray;
 }
 
 export default function Result({ config }: ResultProps): JSX.Element {
-	console.log(config);
+	const resultsMap: ReactNode[] = config.items.map((item) => {
+		const today = new Date().toISOString().split("T")[0];
+		return (
+			<div className="form-auto" key={nanoid()}>
+				{item.type === "text-area" ? (
+					<>
+						<label className="label" htmlFor={item.label}>
+							{item.label}:{" "}
+						</label>
+						<textarea
+							name={item.name}
+							id={item.label}
+							cols={17}
+							rows={3}
+						></textarea>
+					</>
+				) : (
+					<>
+						<label className="label" htmlFor={item.label}>
+							{item.label}:
+						</label>
+						<input
+							type={item.type}
+							name={item.name}
+							id={item.label}
+							defaultValue={item.type === "date" ? today : ""}
+						/>
+					</>
+				)}
+			</div>
+		);
+	});
 
-	const resultsMap: void[] = config.items.map((item) => {
-		console.log(item);
-
-		switch (item.type) {
-			case "number":
-				return (
-					<div className="form-auto">
-						<p>{item.label}:</p>
-						<input type="number" name="" id={item.label} />
-					</div>
-				);
-				break;
-			case "string":
-				return (
-					<div className="form-auto">
-						<p>{item.label}:</p>
-						<input type="text" name="" id={item.label} />
-					</div>
-				);
-				break;
-			case "text-area":
-				return (
-					<div className="form-auto">
-						<p>{item.label}:</p>
-						<textarea name="" id={item.label}></textarea>
-					</div>
-				);
-				break;
-			case "checkbox":
-				return (
-					<div className="form-auto">
-						<p>{item.label}:</p>
-						<input type="checkbox" name="" id={item.label} />
-					</div>
-				);
-				break;
-			case "radio":
-				return (
-					<div className="form-auto">
-						<p>{item.label}:</p>
-						<input type="radio" name="" id={item.label} />
-					</div>
-				);
-				break;
-			case "date":
-				return (
-					<div className="form-auto">
-						<p>{item.label}:</p>
-						<input type="date" name="" id={item.label} />
-					</div>
-				);
-				break;
-
-			default:
-				break;
-		}
+	const buttonsMap: ReactNode[] = config.buttons.map((item) => {
+		return (
+			<button type={item.type} key={nanoid()}>
+				{item.text}
+			</button>
+		);
 	});
 
 	return (
 		<>
-			<h2>This is Result!</h2>
-			{resultsMap}
-			<div>
-				<button>Cancel</button> <button>Save</button>
-			</div>
-			<form action="" className="result-form"></form>
+			<h1>{config.form.title ?? "ERROR: JSON missing"}</h1>
+
+			<form action="" className="result-form">
+				{resultsMap ?? "ERROR: JSON missing"}
+				<div className="buttons-container">
+					{buttonsMap ?? "ERROR: JSON missing"}
+				</div>
+			</form>
 		</>
 	);
 }

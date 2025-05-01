@@ -14,7 +14,7 @@ export default function Tabs({
 	const resultClass = `tab${!showConfig ? " active" : ""}`;
 
 	return (
-		<>
+		<div className="tabs-container">
 			<button
 				type="button"
 				className={configClass}
@@ -33,6 +33,6 @@ export default function Tabs({
 			>
 				Result
 			</button>
-		</>
+		</div>
 	);
 }

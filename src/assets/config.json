@@ -1,4 +1,5 @@
 {
+	"form": { "title": "This is the Result Form!" },
 	"items": [
 		{
 			"label": "numeric",
@@ -30,5 +31,10 @@
 			"type": "radio",
 			"name": "name"
 		}
+	],
+	"buttons": [
+		{ "text": "Ok", "type": "button" },
+		{ "text": "Save", "type": "submit" },
+		{ "text": "Cancel", "type": "reset" }
 	]
 }
