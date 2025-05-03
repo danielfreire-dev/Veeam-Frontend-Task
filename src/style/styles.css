@@ -65,3 +65,12 @@ h1 {
 	border-color: #007bff;
 	outline: none;
 }
+
+.json-input.invalid-json {
+	border-color: red;
+}
+
+.error-message {
+	color: red;
+	font-size: 0.9em;
+}
