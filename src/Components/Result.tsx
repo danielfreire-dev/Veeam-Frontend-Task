@@ -25,7 +25,7 @@ export default function Result({ config }: ResultProps): JSX.Element {
 				) : (
 					<>
 						<label className="label" htmlFor={item.label}>
-							{item.label}:
+							{item.name}:
 						</label>
 						<input
 							type={item.type}

@@ -4,32 +4,32 @@
 		{
 			"label": "numeric",
 			"type": "number",
-			"name": "name"
+			"name": "numeric"
 		},
 		{
 			"label": "string",
 			"type": "text",
-			"name": "name"
+			"name": "text"
 		},
 		{
 			"label": "multi-line",
 			"type": "text-area",
-			"name": "name"
+			"name": "multi-line"
 		},
 		{
 			"label": "boolean",
 			"type": "checkbox",
-			"name": "name"
+			"name": "boolean"
 		},
 		{
 			"label": "date",
 			"type": "date",
-			"name": "name"
+			"name": "date"
 		},
 		{
 			"label": "enum",
 			"type": "radio",
-			"name": "name"
+			"name": "radio"
 		}
 	],
 	"buttons": [
