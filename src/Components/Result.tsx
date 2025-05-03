@@ -1,5 +1,5 @@
 import { JSX, ReactNode } from "react";
-import { ItemsArray } from "./Config.tsx";
+import { ItemsArray } from "../App.tsx";
 import { nanoid } from "nanoid";
 interface ResultProps {
 	config: ItemsArray;
@@ -8,12 +8,33 @@ interface ResultProps {
 export default function Result({ config }: ResultProps): JSX.Element {
 	const resultsMap: ReactNode[] = config.items.map((item) => {
 		const today = new Date().toISOString().split("T")[0];
-		return (
-			<div className="form-auto" key={nanoid()}>
-				{item.type === "text-area" ? (
-					<>
+
+		switch (item.type) {
+			case "number":
+				return (
+					<div className="form-auto" key={nanoid()}>
 						<label className="label" htmlFor={item.label}>
-							{item.label}:{" "}
+							{item.name}:
+						</label>
+						<input type={item.type} name={item.name} id={item.label} />
+					</div>
+				);
+				break;
+			case "string":
+				return (
+					<div className="form-auto" key={nanoid()}>
+						<label className="label" htmlFor={item.label}>
+							{item.name}:
+						</label>
+						<input type={item.type} name={item.name} id={item.label} />
+					</div>
+				);
+				break;
+			case "text-area":
+				return (
+					<div className="form-auto" key={nanoid()}>
+						<label className="label" htmlFor={item.label}>
+							{item.name}:
 						</label>
 						<textarea
 							name={item.name}
@@ -21,9 +42,32 @@ export default function Result({ config }: ResultProps): JSX.Element {
 							cols={17}
 							rows={3}
 						></textarea>
-					</>
-				) : (
-					<>
+					</div>
+				);
+				break;
+			case "checkbox":
+				return (
+					<div className="form-auto" key={nanoid()}>
+						<label className="label" htmlFor={item.label}>
+							{item.name}:
+						</label>
+						<input type={item.type} name={item.name} id={item.label} />
+					</div>
+				);
+				break;
+			case "radio":
+				return (
+					<div className="form-auto" key={nanoid()}>
+						<label className="label" htmlFor={item.label}>
+							{item.name}:
+						</label>
+						<input type={item.type} name={item.name} id={item.label} />
+					</div>
+				);
+				break;
+			case "date":
+				return (
+					<div className="form-auto" key={nanoid()}>
 						<label className="label" htmlFor={item.label}>
 							{item.name}:
 						</label>
@@ -31,20 +75,45 @@ export default function Result({ config }: ResultProps): JSX.Element {
 							type={item.type}
 							name={item.name}
 							id={item.label}
-							defaultValue={item.type === "date" ? today : ""}
+							defaultValue={today}
 						/>
-					</>
-				)}
-			</div>
-		);
+					</div>
+				);
+
+				break;
+
+			default:
+				break;
+		}
 	});
 
-	const buttonsMap: ReactNode[] = config.buttons.map((item) => {
-		return (
-			<button type={item.type} key={nanoid()}>
-				{item.text}
-			</button>
-		);
+	const buttonsMap: React.ReactNode[] = config.buttons.map((button) => {
+		switch (button.type) {
+			case "button":
+				return (
+					<button type={button.type} key={nanoid()}>
+						{button.text}
+					</button>
+				);
+				break;
+			case "submit":
+				return (
+					<button type={button.type} key={nanoid()}>
+						{button.text}
+					</button>
+				);
+				break;
+			case "reset":
+				return (
+					<button type={button.type} key={nanoid()}>
+						{button.text}
+					</button>
+				);
+				break;
+
+			default:
+				break;
+		}
 	});
 
 	return (

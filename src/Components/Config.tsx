@@ -1,29 +1,6 @@
 import { JSX } from "react";
+import { Props } from "../App";
 
-export interface Form {
-	title: string;
-}
-
-export interface Buttons {
-	text: string;
-	type: "button" | "submit" | "reset";
-}
-export interface Item {
-	label: string;
-	type: "number" | "text" | "text-area" | "checkbox" | "date" | "radio";
-	name: string;
-}
-
-export interface ItemsArray {
-	form: Form;
-	items: Item[];
-	buttons: Buttons[];
-}
-
-export interface Props {
-	config: ItemsArray;
-	setConfig: (config: ItemsArray) => void;
-}
 export default function Config({ config, setConfig }: Props): JSX.Element {
 	const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
 		try {

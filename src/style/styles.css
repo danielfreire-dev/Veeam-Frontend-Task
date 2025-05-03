@@ -50,3 +50,18 @@ h1 {
 .buttons-container button[type="reset"] {
 	background-color: red;
 }
+
+.textarea-custom {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+	box-sizing: border-box;
+}
+
+.textarea-custom:focus {
+	border-color: #007bff;
+	outline: none;
+}

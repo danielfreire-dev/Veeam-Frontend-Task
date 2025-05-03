@@ -9,7 +9,7 @@
 		{
 			"label": "string",
 			"type": "text",
-			"name": "text"
+			"name": "string"
 		},
 		{
 			"label": "multi-line",
@@ -22,14 +22,14 @@
 			"name": "boolean"
 		},
 		{
+			"label": "enum",
+			"type": "radio",
+			"name": "enum"
+		},
+		{
 			"label": "date",
 			"type": "date",
 			"name": "date"
-		},
-		{
-			"label": "enum",
-			"type": "radio",
-			"name": "radio"
 		}
 	],
 	"buttons": [
