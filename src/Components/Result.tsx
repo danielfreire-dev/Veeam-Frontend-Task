@@ -118,12 +118,12 @@ export default function Result({ config }: ResultProps): JSX.Element {
 
 	return (
 		<>
-			<h1>{config.form.title ?? "ERROR: JSON missing"}</h1>
+			<h1>{config.form.title ?? "ERROR: Missing title in JSON"}</h1>
 
 			<form action="" className="result-form">
-				{resultsMap ?? "ERROR: JSON missing"}
+				{resultsMap ?? "ERROR: JSON Form data missing"}
 				<div className="buttons-container">
-					{buttonsMap ?? "ERROR: JSON missing"}
+					{buttonsMap ?? "ERROR: JSON Buttons missing"}
 				</div>
 			</form>
 		</>

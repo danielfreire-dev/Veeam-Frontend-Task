@@ -13,8 +13,8 @@ h1 {
 .body-container {
 	background-color: gray;
 	padding: 2em;
-	max-width: 50dvw;
-	width: 40dvw;
+	max-width: 30dvw;
+	width: 50dvw;
 }
 
 .tabs-container button {
@@ -35,7 +35,7 @@ h1 {
 	display: flex;
 	flex-wrap: nowrap;
 	padding-bottom: 1em;
-	align-items: center;
+	align-items: stretch;
 	justify-content: space-between;
 }
 
