@@ -22,3 +22,4 @@ This task was presented by Veeam as part of the an application as for a Frontend
   - radio
   - date
 - Date default value is today.
+- If you change tabs with a warning, then the app will not save the new data

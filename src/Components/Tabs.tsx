@@ -5,6 +5,7 @@ interface TabsProps {
 	setShowConfig: (showConfig: boolean) => void;
 }
 
+/* Defines which component is showing  */
 export default function Tabs({
 	showConfig,
 	setShowConfig,

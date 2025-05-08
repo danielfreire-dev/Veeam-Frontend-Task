@@ -33,6 +33,7 @@ export interface Props {
 }
 
 function App() {
+	/* Standard tab is Config */
 	const [showConfig, setShowConfig] = useState(true);
 	const [config, setConfig] = useState(configData);
 

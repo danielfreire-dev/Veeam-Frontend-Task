@@ -6,9 +6,11 @@ interface ResultProps {
 }
 
 export default function Result({ config }: ResultProps): JSX.Element {
+	/* Maps through "items" */
 	const resultsMap: ReactNode[] = config.items.map((item) => {
 		const today = new Date().toISOString().split("T")[0];
 
+		/* Switch case allows to add more options in the future without giving up performance*/
 		switch (item.type) {
 			case "number":
 				return (
@@ -20,7 +22,7 @@ export default function Result({ config }: ResultProps): JSX.Element {
 					</div>
 				);
 				break;
-			case "string":
+			case "text":
 				return (
 					<div className="form-auto" key={nanoid()}>
 						<label className="label" htmlFor={item.label}>
@@ -84,14 +86,15 @@ export default function Result({ config }: ResultProps): JSX.Element {
 
 			default:
 				return (
-					<div className="form-auto" key={nanoid()}>
-						<p>This type is not currently accepted!</p>
+					<div className="form-auto error-message" key={nanoid()}>
+						<p>This type is not accepted!</p>
 					</div>
 				);
 				break;
 		}
 	});
 
+	/* Maps through "buttons" */
 	const buttonsMap: React.ReactNode[] = config.buttons.map((button) => {
 		switch (button.type) {
 			case "button":

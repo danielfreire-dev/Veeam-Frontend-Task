@@ -1,4 +1,5 @@
 export default function Footer() {
+	/* Footer with links */
 	return (
 		<footer>
 			Solution by
