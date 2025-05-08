@@ -83,6 +83,11 @@ export default function Result({ config }: ResultProps): JSX.Element {
 				break;
 
 			default:
+				return (
+					<div className="form-auto" key={nanoid()}>
+						<p>This type is not currently accepted!</p>
+					</div>
+				);
 				break;
 		}
 	});

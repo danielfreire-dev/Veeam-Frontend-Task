@@ -11,12 +11,14 @@ This task was presented by Veeam as part of the an application as for a Frontend
 
 ## Instructions:
 
-The object key `"items"` provides the form elements.
-The placeholder file has one of each but more can be added.
-The `"label"` key should be unique to each item, as it connects the text with the form element.
-
-## Other Projects:
-
-Take a look at my other projects:
-
-**Quizzical:** https://github.com/danielfreire-dev/Quizzical
+- The object key `"items"` provides the form elements.
+  The placeholder file has one of each but more can be added.
+- The `"label"` key should be unique to each item, as it connects the text with the form element.
+- Input types accepted:
+  - number
+  - text
+  - <textarea>
+  - checkbox
+  - radio
+  - date
+- Date default value is today.

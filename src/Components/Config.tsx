@@ -22,6 +22,11 @@ export default function Config({ config, setConfig }: Props): JSX.Element {
 
 	return (
 		<>
+			{!isValidJson && (
+				<p className="error-message">
+					Invalid JSON input. Please correct the JSON format.
+				</p>
+			)}
 			<textarea
 				name="json-input"
 				id="json-box"
@@ -31,11 +36,6 @@ export default function Config({ config, setConfig }: Props): JSX.Element {
 				onChange={handleChange}
 				className={`json-input ${!isValidJson ? "invalid-json" : ""}`}
 			></textarea>
-			{!isValidJson && (
-				<p className="error-message">
-					Invalid JSON input. Please correct the JSON format.
-				</p>
-			)}
 		</>
 	);
 }
