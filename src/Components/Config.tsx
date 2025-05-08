@@ -24,7 +24,7 @@ export default function Config({ config, setConfig }: Props): JSX.Element {
 		<>
 			{!isValidJson && (
 				<p className="error-message">
-					Invalid JSON input. Please correct the JSON format.
+					Invalid JSON input. Please fix the JSON format.
 				</p>
 			)}
 			<textarea
